@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="SamplingSpinnerItems">
+        <item>Nothing</item>
+        <item>1 Knocked Correctly</item>
+        <item>1 Knocked Incorrectly</item>
+    <item>2 Knocked Correctly</item>
+    <item>1 Knocked Correctly 1 Incorrectly</item>
+    <item>2 Knocked Incorrectly</item>
+</string-array>
+    <string-array name="SamplingLocation">
+        <item>Center</item>
+        <item>Right</item>
+        <item>Left</item>
+    </string-array>
+    <string-array name="EndGameSpinner">
+        <item>Nothing</item>
+        <item>Partially Parked</item>
+        <item>Fully Parked</item>
+        <item>Hung</item>
+    </string-array>
+</resources>

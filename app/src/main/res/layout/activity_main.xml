@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:fillViewport="false">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+            <EditText
+                android:id="@+id/sheetName"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="15sp"
+                android:hint="File Name"
+                android:inputType="text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="8dp" />
+            <EditText
+                android:id="@+id/teamNumber"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                android:hint="Team Number"
+                android:inputType="number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sheetName"
+                android:layout_marginStart="8dp" />
+            <EditText
+                android:id="@+id/matchNumber"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textSize="15sp"
+                android:hint="Match Number"
+                android:inputType="number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teamNumber"
+                android:layout_marginStart="8dp" />
+            <TextView
+                android:id="@+id/AllianceLabel"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Alliance"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/matchNumber"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/BlueAllianceLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Blue"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AllianceLabel"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                />
+            <Switch
+                android:id="@+id/AllianceSwitch"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/BlueAllianceLabel"
+                app:layout_constraintTop_toTopOf="@+id/BlueAllianceLabel"
+                />
+            <TextView
+                android:id="@+id/RedAllianceLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Red"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@+id/AllianceSwitch"
+                app:layout_constraintTop_toTopOf="@+id/BlueAllianceLabel"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:textSize="15sp"
+                />
+
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/AutonomousLabel"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Autonomous"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RedAllianceLabel"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/SkystoneStartLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Skystone Start"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AutonomousLabel"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                />
+            <Switch
+                android:id="@+id/StartingSwitch"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/SkystoneStartLabel"
+                app:layout_constraintTop_toTopOf="@+id/SkystoneStartLabel"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/FoundationStartLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Foundation Start"
+                app:layout_constraintLeft_toRightOf="@+id/StartingSwitch"
+                app:layout_constraintTop_toTopOf="@+id/SkystoneStartLabel"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                />
+
+            <CheckBox
+                android:id="@+id/FoundationMoved"
+                android:layout_width="240dp"
+                android:layout_height="19dp"
+                android:text="Foundation Moved"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SkystoneStartLabel"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick = "updateClick" />
+            <CheckBox
+                android:id="@+id/AutoParked"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Parked"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FoundationMoved"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick = "updateClick" />
+
+
+            <TextView
+                android:id="@+id/TeleOpLabel"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="TeleOp"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteY="469dp" />
+            <TextView
+                android:id="@+id/StoneDeliveredLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Stones Delivered"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveStonesDelivered"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                />
+
+            <Button
+                android:id="@+id/RemoveStonesDelivered"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                app:layout_constraintLeft_toRightOf="@+id/StoneDeliveredLabel"
+                app:layout_constraintTop_toBottomOf="@+id/TeleOpLabel"
+                android:onClick = "subSilverCargo"
+                 />
+            />
+            <TextView
+                android:id="@+id/StonesDeliveredNumber"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@+id/RemoveStonesDelivered"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveStonesDelivered"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/AddStonesDelivered"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/StonesDeliveredNumber"
+                app:layout_constraintTop_toBottomOf="@+id/TeleOpLabel"
+                android:onClick = "addSilverCargo"
+                />
+            <TextView
+                android:id="@+id/GoldCargoLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Gold Cargo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveGoldCargo"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/RemoveGoldCargo"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                app:layout_constraintLeft_toRightOf="@+id/GoldCargoLabel"
+                app:layout_constraintTop_toBottomOf="@+id/StoneDeliveredLabel"
+                android:onClick = "subGoldCargo"
+                />
+            <TextView
+                android:id="@+id/GoldCargoNumber"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@id/RemoveGoldCargo"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveGoldCargo"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/AddGoldCargo"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/GoldCargoNumber"
+                app:layout_constraintTop_toBottomOf="@+id/StoneDeliveredLabel"
+                android:onClick = "addGoldCargo"
+                />
+            <TextView
+                android:id="@+id/SilverDepotLabel"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Silver Depot"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveSilverDepot"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/RemoveSilverDepot"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                app:layout_constraintLeft_toRightOf="@+id/SilverDepotLabel"
+                app:layout_constraintTop_toBottomOf="@+id/GoldCargoLabel"
+                android:onClick = "subSilverDepot"
+                />
+            <TextView
+                android:id="@+id/SilverDepotNumber"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@id/RemoveSilverDepot"
+                app:layout_constraintBottom_toBottomOf="@+id/RemoveSilverDepot"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/AddSilverDepot"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                app:layout_constraintLeft_toRightOf="@+id/SilverDepotNumber"
+                app:layout_constraintTop_toBottomOf="@+id/AddGoldCargo"
+                android:onClick = "addSilverDepot"
+                />
+
+
+            <TextView
+                android:id="@+id/EndGameLabel"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="End Game"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteY="698dp" />
+
+            <TextView
+                android:id="@+id/ScoreLabel"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Score: "
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:layout_editor_absoluteY="809dp" />
+
+            <TextView
+                android:id="@+id/ScoreNumber"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintLeft_toRightOf="@id/ScoreLabel"
+                app:layout_constraintBottom_toBottomOf="@+id/ScoreLabel"
+                android:layout_marginTop="0dp"
+                android:textSize="15sp"
+                />
+
+
+            <CheckBox
+                android:id="@+id/FTAError"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="FTA Error"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ScoreNumber"
+                android:textSize="15sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                />
+
+            <EditText
+                android:id="@+id/AdditionalComments"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="15sp"
+                android:hint="Additional Comments"
+                android:inputType="text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/FTAError"
+                android:layout_marginStart="8dp" />
+            <EditText
+                android:id="@+id/Initials"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="15sp"
+                android:hint="Initials"
+                android:inputType="text"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/AdditionalComments"
+                android:layout_marginStart="8dp" />
+            <Button
+                android:id="@+id/SubmitButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Initials"
+                android:onClick = "submit"
+                android:layout_marginLeft="8dp"
+                />
+            <Button
+                android:id="@+id/ResetButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                app:layout_constraintLeft_toRightOf="@+id/SubmitButton"
+                app:layout_constraintTop_toBottomOf="@+id/Initials"
+                android:onClick = "resetButtonClick"
+                />
+
+            />
+            />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </HorizontalScrollView>
+</ScrollView>

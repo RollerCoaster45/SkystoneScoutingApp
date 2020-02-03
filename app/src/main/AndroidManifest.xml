@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wizardsexe.rockvillerobotics.skystonescoutingapp">
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/rrphoto"
-        android:label="RR2 Scouting"
+        android:icon="@mipmap/skystonelogo"
+        android:label="Skystone Scouting"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.wizardsexe.rockvillerobotics.skystonescoutingapp.MainActivity">

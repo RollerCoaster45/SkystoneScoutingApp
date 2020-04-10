@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.os.Vibrator;
 
 public class MainActivity extends AppCompatActivity {
+
+    //create variables for all objects on app screen
     TextView AllianceLabel, BlueAllianceLabel, RedAllianceLabel, AutonomousLabel, SkystoneStartLabel,
             FoundationStartLabel, AutoSkystoneDeliveredLabel, AutoStoneDeliveredLabel, AutoStonePlacedLabel,
             AutoSkystoneDeliveredNumber, AutoStoneDeliveredNumber, AutoStonePlacedNumber, TeleOpLabel,
@@ -34,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     Switch AllianceSwitch, AutoStartSwitch;
 
+    //create a data logger
     DataLogger data;
 
+    //create numeric variables for data that needs to be stored
     int score = 0;
     int autoStoneDelivered = 0;
     int autoSkystoneDelivered = 0;
@@ -48,13 +52,15 @@ public class MainActivity extends AppCompatActivity {
     Vibrator v;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //setup all screen and app functions
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Get instance of Vibrator from current Context
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 
-
+        //link all screen objects to java object
         AllianceLabel = (TextView) findViewById(R.id.AllianceLabel);
         BlueAllianceLabel = (TextView) findViewById(R.id.BlueAllianceLabel);
         RedAllianceLabel = (TextView) findViewById(R.id.RedAllianceLabel);
@@ -115,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
         AllianceSwitch = (Switch) findViewById(R.id.AllianceSwitch);
         AutoStartSwitch = (Switch) findViewById(R.id.StartingSwitch);
 
+
+        //set the width of each item to a desired width based on the size of the screen
         int width = (getResources().getDisplayMetrics().widthPixels)-32;
 
         ViewGroup.LayoutParams layout;
@@ -147,8 +155,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    //this function is called anytime anything changes on the screen
     public void update(){
+
+        //reset score and start counting score
         score=0;
+
+        //display auto button inputs and add auto scores
         score+=autoSkystoneDelivered*10;
         AutoSkystoneDeliveredNumber.setText(""+autoSkystoneDelivered);
 
@@ -165,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
             score+=10;
         }
 
+        //display teleop button inputs and add teleop scores
         score+=teleopStoneDelivered*1;
         StoneDeliveredNumber.setText(""+teleopStoneDelivered);
 
@@ -189,9 +204,8 @@ public class MainActivity extends AppCompatActivity {
             score+=5;
         }
 
+        //set the score text at the bottom of the screen
         ScoreNumber.setText(""+score);
-
-
     }
 
     //AUTO FUNCTIONS
@@ -304,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
         update();
     }
 
-
+    //reset button pressed makes sure that user wants to reset
     public void resetButtonClick(View view){
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
         builder1.setMessage("Are you sure you would like to reset?");
@@ -328,6 +342,7 @@ public class MainActivity extends AppCompatActivity {
         alert11.show();
     }
 
+    //reset function to reset the entire screen
     public void reset(){
         score = 0;
         autoStoneDelivered = 0;
@@ -355,6 +370,7 @@ public class MainActivity extends AppCompatActivity {
         AdditionalComments.setText("");
     }
 
+    //data validate the information in the app and make sure that the user is ready to submit
     public void submit(View view) {
         if (TeamNumber.getText().toString().trim().equals("")) {
             AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
@@ -419,6 +435,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //write the data to the excel file using the data logger
     public void dataSubmit(){
         data = new DataLogger(SheetName.getText().toString() + ".xls");
         data.resetAndNextRow(this);

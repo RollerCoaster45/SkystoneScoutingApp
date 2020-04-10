@@ -33,10 +33,14 @@ public class DataLogger {
     Workbook wb;
     static String TAG = "ExelLog";
 
+    //constructor for data logger
     public DataLogger(String fileName) {
+        //set row, column and name
         this.row = 0;
         this.column = 0;
         this.name = fileName;
+
+        //make sure storage is accessible
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
             Log.e(TAG, "Storage not available or read only");
         }
@@ -49,9 +53,12 @@ public class DataLogger {
         currentRow = currentSheet.createRow(0);
     }
     public boolean saveDataLogger(Context context) {
+        //create a file and output stream
         File file = new File(context.getExternalFilesDir(null), name);
         FileOutputStream os = null;
 
+
+        //try to save file
         try {
             os = new FileOutputStream(file);
             wb.write(os);
@@ -72,6 +79,8 @@ public class DataLogger {
             }
         }
     }
+
+    //ALL ADD FIELD METHODS ADD A CELL OF DATA TO THE RIGHT FOR DIFFERENT DATA TYPES
     public void addField(String obj){
         Cell c = currentRow.createCell(column);
         c.setCellValue(obj);
@@ -112,11 +121,15 @@ public class DataLogger {
         c.setCellValue(obj);
         column++;
     }
+
+    //new line method moves onto the next row. Each row represents 1 match for 1 robot
     public void newLine() {
         row++;
         this.currentRow = currentSheet.createRow(row);
         column=0;
     }
+
+    //function to check storage
     public static boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState)) {
@@ -124,7 +137,6 @@ public class DataLogger {
         }
         return false;
     }
-
     public static boolean isExternalStorageAvailable() {
         String extStorageState = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(extStorageState)) {
@@ -132,6 +144,8 @@ public class DataLogger {
         }
         return false;
     }
+
+    //setup object for adding to an existing excel file
     public void resetAndNextRow(Context context){
         readExcelFile(context);
 
@@ -149,6 +163,8 @@ public class DataLogger {
         currentRow = currentSheet.createRow(row);
 
     }
+
+    //setup header on spreadsheet
     private void setupSpreadsheet(){
         this.addField("Team Number");
         this.addField("Match Number");
@@ -173,6 +189,8 @@ public class DataLogger {
         this.newLine();
 
     }
+
+    //import existing excel file that way it can be appended to
     private void readExcelFile(Context context) {
 
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly())

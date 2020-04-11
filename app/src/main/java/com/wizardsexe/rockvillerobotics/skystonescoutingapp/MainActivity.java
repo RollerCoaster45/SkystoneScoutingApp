@@ -182,6 +182,8 @@ public class MainActivity extends AppCompatActivity {
         SkyscraperNumber.setText(""+skyscraperHeight);
         if(CapstonePlaced.isChecked()){
             score+=5;
+        }else{
+            capstoneHeight = 0;
         }
         score+=capstoneHeight*1;
         CapstoneHeightNumber.setText(""+capstoneHeight);
@@ -276,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
         update();
     }
     public void subSkyscraperHeight(View view){
-        if(skyscraperHeight<0){
+        if(skyscraperHeight>0){
             skyscraperHeight--;
         }
         v.vibrate(100);
@@ -353,6 +355,7 @@ public class MainActivity extends AppCompatActivity {
         CapstoneHeightNumber.setText(""+0);
         FoundationMovedOut.setChecked(false);
         EndPark.setChecked(false);
+        ScoreNumber.setText(""+score);
         FTAError.setChecked(false);
         AdditionalComments.setText("");
     }

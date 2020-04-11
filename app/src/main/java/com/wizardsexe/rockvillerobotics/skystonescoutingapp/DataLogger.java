@@ -46,18 +46,18 @@ public class DataLogger {
         }
 
     }
+
     public void createNewWorkbook(){
         //New Workbook
         wb = new HSSFWorkbook();
         currentSheet = wb.createSheet("Sheet1");
         currentRow = currentSheet.createRow(0);
     }
+
     public boolean saveDataLogger(Context context) {
         //create a file and output stream
         File file = new File(context.getExternalFilesDir(null), name);
         FileOutputStream os = null;
-
-
         //try to save file
         try {
             os = new FileOutputStream(file);

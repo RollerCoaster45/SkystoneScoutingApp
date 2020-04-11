@@ -158,52 +158,39 @@ public class MainActivity extends AppCompatActivity {
 
     //this function is called anytime anything changes on the screen
     public void update(){
-
         //reset score and start counting score
         score=0;
-
         //display auto button inputs and add auto scores
         score+=autoSkystoneDelivered*10;
         AutoSkystoneDeliveredNumber.setText(""+autoSkystoneDelivered);
-
         score+=autoStoneDelivered*2;
         AutoStoneDeliveredNumber.setText(""+autoStoneDelivered);
-
         score+=autoStonePlaced*4;
         AutoStonePlacedNumber.setText(""+autoStonePlaced);
-
         if (AutoPark.isChecked()) {
             score+=5;
         }
         if(FoundationMoved.isChecked()){
             score+=10;
         }
-
         //display teleop button inputs and add teleop scores
         score+=teleopStoneDelivered*1;
         StoneDeliveredNumber.setText(""+teleopStoneDelivered);
-
         score+=teleopStonePlaced*1;
         StonePlacedNumber.setText(""+teleopStonePlaced);
-
         score+=skyscraperHeight*2;
         SkyscraperNumber.setText(""+skyscraperHeight);
-
         if(CapstonePlaced.isChecked()){
             score+=5;
         }
-
         score+=capstoneHeight*1;
         CapstoneHeightNumber.setText(""+capstoneHeight);
-
         if(FoundationMovedOut.isChecked()){
             score+=15;
         }
-
         if(EndPark.isChecked()){
             score+=5;
         }
-
         //set the score text at the bottom of the screen
         ScoreNumber.setText(""+score);
     }
